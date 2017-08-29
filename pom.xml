@@ -3,7 +3,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>springBootTest</groupId>
   <artifactId>springBootTest</artifactId>
-  <packaging>war</packaging>
+  <packaging>jar</packaging>
   <version>0.0.1-SNAPSHOT</version>
   <name>springBootTest Maven Webapp</name>
   <url>http://maven.apache.org</url>
@@ -24,6 +24,17 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
+        
+        <dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-freemarker</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-configuration-processor</artifactId>
+			<optional>true</optional>
+		</dependency>
+		
   </dependencies>
   <build>
     <finalName>springBootTest</finalName>
