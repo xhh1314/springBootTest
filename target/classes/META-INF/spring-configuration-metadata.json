@@ -1,0 +1,11 @@
+{
+  "hints": [],
+  "groups": [
+    {
+      "sourceType": "springBootTest.config.YamlProperties",
+      "name": "my",
+      "type": "springBootTest.config.YamlProperties"
+    }
+  ],
+  "properties": []
+}

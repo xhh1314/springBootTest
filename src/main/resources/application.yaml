@@ -1,0 +1,50 @@
+spring:
+  profiles:
+    active:development
+---
+#配置文件名称
+spring:
+  profiles:development
+#freemarker前缀
+spring:  
+  freemarker:
+    prefix:
+#JDBC配置 
+  datasource:
+    url:
+    username:
+    password:
+    driver-class-name:
+    #连接池配置
+    druid:
+      initial-size:
+      max-active:
+      min-idle:
+      max-wait:
+      pool-prepared-statements:
+      max-pool-prepared-statement-per-connection-size:
+      validation-query:
+      validation-query-timeout:
+      test-on-borrow:
+      test-on-return:
+      test-while-idle:
+      time-between-eviction-runs-millis:
+      min-evictable-idle-time-millis:
+      max-evictable-idle-time-millis:
+      
+
+   
+    
+my:
+  server:
+    address:127.0.0.1
+  
+  
+  
+---
+spring:
+  profiles:production
+
+    
+  
+  
