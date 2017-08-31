@@ -13,17 +13,17 @@
 		<version>2.0.0.BUILD-SNAPSHOT</version>
 	</parent>
 	<dependencies>
-		<dependency>
-			<groupId>junit</groupId>
-			<artifactId>junit</artifactId>
-			<version>3.8.1</version>
-			<scope>test</scope>
-		</dependency>
 		<!-- Add typical dependencies for a web application 同时会附带对logback的支持 -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-test</artifactId>
+			<scope>test</scope>
+		</dependency>
+
 		<!-- springboot默认使用logback日志，如果需要使用log4j2的话，需要在上面的starter里禁用其自带的logging支持 -->
 		<!-- <dependency> <groupId>org.springframework.boot</groupId> <artifactId>spring-boot-starter</artifactId> 
 			<exclusions> <exclusion> <groupId>org.springframework.boot</groupId> <artifactId>spring-boot-starter-logging</artifactId> 
@@ -34,54 +34,37 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-freemarker</artifactId>
 		</dependency>
-		<!-- Starter for using Spring Data JPA with Hibernate -->
-
+		 <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-jpa</artifactId>
+        </dependency>
+		<!-- 使用druid连接池 -->
 		<dependency>
-			<groupId>org.springframework.data</groupId>
-			<artifactId>spring-data-jpa</artifactId>
-			<exclusions>
-				<exclusion>
-					<groupId>org.aspectj</groupId>
-					<artifactId>aspectjrt</artifactId>
-				</exclusion>
-				<exclusion>
-					<groupId>org.slf4j</groupId>
-					<artifactId>jcl-over-slf4j</artifactId>
-				</exclusion>
-			</exclusions>
+			<groupId>com.alibaba</groupId>
+			<artifactId>druid</artifactId>
+			<version>1.1.2</version>
 		</dependency>
+		
 		<dependency>
 			<groupId>mysql</groupId>
 			<artifactId>mysql-connector-java</artifactId>
 		</dependency>
 		
-		<!-- 使用druid连接池 -->
-			<dependency>
-				<groupId>com.alibaba</groupId>
-				<artifactId>druid-spring-boot-starter</artifactId>
-				<version>1.1.2</version>
-			</dependency>
-			
-		<dependency>
-			<groupId>org.hibernate</groupId>
-			<artifactId>hibernate-core</artifactId>
-			<exclusions>
-				<exclusion>
-					<artifactId>
-						jboss-transaction-api_1.2_spec
-					</artifactId>
-					<groupId>org.jboss.spec.javax.transaction</groupId>
-				</exclusion>
-			</exclusions>
-		</dependency>
-
+		
+		<!-- You can easily generate your own configuration meta-data file from 
+			items annotated with @ConfigurationProperties by using the spring-boot-configuration-processor 
+			jar.You can easily generate your own configuration meta-data file from items 
+			annotated with @ConfigurationProperties by using the spring-boot-configuration-processor 
+			jar. -->
+			 
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-configuration-processor</artifactId>
 			<optional>true</optional>
 		</dependency>
-
+		
 	</dependencies>
+
 	<build>
 		<finalName>springBootTest</finalName>
 		<!-- Spring Boot includes a Maven plugin that can package the project as 
