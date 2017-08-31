@@ -1,3 +1,9 @@
 springBootTest\domain\Order.class
+springBootTest\controller\UserController.class
+springBootTest\MyApplicationConfig.class
 springBootTest\dao\UserDao.class
 META-INF\spring-configuration-metadata.json
+springBootTest\config\DataBaseConfiguration.class
+springBootTest\test01\ThisWillActuallyRun.class
+springBootTest\config\YamlProperties.class
+springBootTest\domain\User.class

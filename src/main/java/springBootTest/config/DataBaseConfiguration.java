@@ -34,7 +34,7 @@ class DataBaseConfiguration {
 
 	@Primary
 	@Bean
-@ConfigurationProperties("spring.datasource.druid")
+    @ConfigurationProperties("spring.datasource.druid")
 	public DataSource dataSource(DataSourceProperties properties) {
 		/*DruidDataSource dataSource = createDataSource(properties, DruidDataSource.class);
 		DatabaseDriver databaseDriver = DatabaseDriver.fromJdbcUrl(properties.determineUrl());

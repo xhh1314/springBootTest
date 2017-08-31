@@ -1,0 +1,36 @@
+#各个key的冒号后边必须跟一个空格
+spring:
+  datasource:
+    type : com.alibaba.druid.pool.DruidDataSource
+    url : jdbc:mysql://localhost:3306/springboot
+    username : root
+    password : root
+    driver-class-name : com.mysql.jdbc.Driver
+    
+    druid:
+          initial-size : 2
+          max-active : 10
+#      min-idle:
+#      max-wait:
+#      pool-prepared-statements:
+#      max-pool-prepared-statement-per-connection-size:
+#      validation-query:
+#      validation-query-timeout:
+#      test-on-borrow:
+#      test-on-return:
+#      test-while-idle:
+#      time-between-eviction-runs-millis:
+#      min-evictable-idle-time-millis:
+#      max-evictable-idle-time-millis:
+          filter:
+         # 配置StatFilter 
+                 stat:
+                      db-type : h2
+                      log-slow-sql : true
+                      slow-sql-millis : 2000
+         # 配置WallFilter 
+                 wall:
+                      enabled : true
+                      db-type : h2
+                      delete-allow : false
+                      drop-table-allow : false
