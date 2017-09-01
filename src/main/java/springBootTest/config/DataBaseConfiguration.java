@@ -2,6 +2,7 @@ package springBootTest.config;
 
 import javax.sql.DataSource;
 
+import org.springframework.boot.autoconfigure.jdbc.DataSourceBuilder;
 import org.springframework.boot.autoconfigure.jdbc.DataSourceProperties;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.boot.jdbc.DatabaseDriver;
@@ -26,24 +27,12 @@ import com.alibaba.druid.support.http.WebStatFilter;
 @EnableTransactionManagement
 class DataBaseConfiguration {
 
-	@SuppressWarnings("unchecked")
-	protected <T> T createDataSource(DataSourceProperties properties, Class<? extends DataSource> type) {
-		return (T) properties.initializeDataSourceBuilder().type(type).build();
-	}
-	//模仿DataSourceConfiguration 这个类进行的配置
-
+	//这里数据源配置非常重要，如果数据源配置错了，会出现一个很莫名奇妙的错误， 而且看不出来是数据源错了！
 	@Primary
 	@Bean
-    @ConfigurationProperties("spring.datasource.druid")
-	public DataSource dataSource(DataSourceProperties properties) {
-		/*DruidDataSource dataSource = createDataSource(properties, DruidDataSource.class);
-		DatabaseDriver databaseDriver = DatabaseDriver.fromJdbcUrl(properties.determineUrl());
-		String validationQuery = databaseDriver.getValidationQuery();
-		if (validationQuery != null) {
-			dataSource.setTestOnBorrow(true);
-			dataSource.setValidationQuery(validationQuery);
-		}*/
-		return new DruidDataSource();
+    @ConfigurationProperties("spring.datasource")
+	public DataSource dataSource() {
+		return DataSourceBuilder.create().build();
 	}
 	
 	/**

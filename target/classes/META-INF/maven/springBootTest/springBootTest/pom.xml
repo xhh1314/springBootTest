@@ -18,12 +18,6 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-test</artifactId>
-			<scope>test</scope>
-		</dependency>
-
 		<!-- springboot默认使用logback日志，如果需要使用log4j2的话，需要在上面的starter里禁用其自带的logging支持 -->
 		<!-- <dependency> <groupId>org.springframework.boot</groupId> <artifactId>spring-boot-starter</artifactId> 
 			<exclusions> <exclusion> <groupId>org.springframework.boot</groupId> <artifactId>spring-boot-starter-logging</artifactId> 
@@ -50,17 +44,24 @@
 			<artifactId>mysql-connector-java</artifactId>
 		</dependency>
 		
-		
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-aop</artifactId>
+		</dependency>
 		<!-- You can easily generate your own configuration meta-data file from 
 			items annotated with @ConfigurationProperties by using the spring-boot-configuration-processor 
 			jar.You can easily generate your own configuration meta-data file from items 
 			annotated with @ConfigurationProperties by using the spring-boot-configuration-processor 
-			jar. -->
-			 
+			jar. --> 
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-configuration-processor</artifactId>
 			<optional>true</optional>
+		</dependency>
+			<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-test</artifactId>
+			<scope>test</scope>
 		</dependency>
 		
 	</dependencies>
